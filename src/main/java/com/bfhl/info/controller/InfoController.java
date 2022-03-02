@@ -1,6 +1,7 @@
 package com.bfhl.info.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,5 +18,10 @@ public class InfoController {
 	@PostMapping("/bfhl")
 	public InfoResponse getInformation(@RequestBody InfoRequest req) {
 		return service.getInformation(req);
+	}
+	
+	@GetMapping("/")
+	public String Health() {
+		return " 200";
 	}
 }
